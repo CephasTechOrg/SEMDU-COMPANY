@@ -1,4 +1,4 @@
-
+﻿
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -31,16 +31,16 @@ window.addEventListener('scroll', () => {
 // Testimonial Slider
 const testimonials = [
     {
-        text: "Semdu handled my documents, visa, and flights without a hitch. Clear communication and quick turnaround—exactly what busy travelers need.",
-        name: "Samuel Aboakye",
-        location: "Business Travel Support",
-        image: "https://images.unsplash.com/photo-1565884280295-98eb83e41c65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjBtYW58ZW58MHx8MHx8fDA%3D"
+        text: 'Semdu handled my documents, visa, and flights without a hitch. Clear communication and quick turnaround—exactly what busy travelers need.',
+        name: 'Samuel Aboakye',
+        location: 'Business Travel Support',
+        image: 'https://images.unsplash.com/photo-1565884280295-98eb83e41c65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjBtYW58ZW58MHx8MHx8fDA%3D'
     },
     {
-        text: "They managed my itinerary, hotel, and visa updates flawlessly. The team made every leg of my trip feel effortless.",
-        name: "Felica Serwaa",
-        location: "Multi-country Trip",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmt_rEqSaDu2qINSjbqx9SJHFKVhTiiDEng&s"
+        text: 'They managed my itinerary, hotel, and visa updates flawlessly. The team made every leg of my trip feel effortless.',
+        name: 'Felica Serwaa',
+        location: 'Multi-country Trip',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmt_rEqSaDu2qINSjbqx9SJHFKVhTiiDEng&s'
     }
 ];
 
@@ -134,6 +134,124 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Service detail modal
+const serviceDetails = {
+    flight: {
+        title: 'Flight Ticket Booking',
+        summary: 'Flexible itineraries, best-rate monitoring, and proactive rebooking support for smooth travel.',
+        points: [
+            '24/7 fare watch and reroute assistance',
+            'Multi-city and complex routes handled',
+            'Corporate and family group coordination'
+        ],
+        timeline: 'Typical turnaround: 1-3 hours for confirmed options'
+    },
+    visa: {
+        title: 'Visa Processing',
+        summary: 'Embassy-ready applications with document prep, interview coaching, and status follow-ups.',
+        points: [
+            'Document checklist and bank-proof guidance',
+            'Mock interviews and officer-style questions',
+            'Dedicated handler for your application'
+        ],
+        timeline: 'Preparation: 3-7 days - Embassy timelines vary'
+    },
+    hotel: {
+        title: 'Hotel & Vacation Packages',
+        summary: 'Curated stays, transfers, and activities with options across luxury and budget tiers.',
+        points: [
+            'Airport pickups and local transport arranged',
+            'Activity planning with vetted partners',
+            'Group and family-friendly packages'
+        ],
+        timeline: 'Itinerary design: 2-4 days'
+    },
+    documents: {
+        title: 'Travel Document Assistance',
+        summary: 'Clean, compliant paperwork for passports, sponsor letters, proof of funds, and insurance.',
+        points: [
+            'Document drafting and verification',
+            'Bank statement preparation guidance',
+            'Insurance and cover letters arranged'
+        ],
+        timeline: 'Document set-up: 1-3 days'
+    },
+    delivery: {
+        title: 'SEMDU Delivery (Ghana)',
+        summary: 'Nationwide delivery for documents, parcels, and travel essentials with priority handling.',
+        points: [
+            'Same-day and next-day within major cities',
+            'Live tracking and secure handover protocols',
+            '20% weekend discount on all deliveries'
+        ],
+        timeline: 'Coverage: Across Ghana - Priority same-day available'
+    },
+    farming: {
+        title: 'Sustainable Farming',
+        summary: 'Regenerative practices that protect soil, animals, and communities while keeping produce traceable.',
+        points: [
+            'Soil-friendly crop rotation and cover crops',
+            'Ethical animal care and feed transparency',
+            'Local market partnerships for stable supply'
+        ],
+        timeline: 'Seasonal planning with weekly supply updates'
+    },
+    estate: {
+        title: 'Real Estate Solutions',
+        summary: 'Tenant-ready spaces, investor research, and due diligence support with Semdu\'s local expertise.',
+        points: [
+            'Site selection and market intelligence',
+            'Documentation, permits, and compliance checks',
+            'Maintenance and tenant experience support'
+        ],
+        timeline: 'Site shortlist: 3-10 days depending on scope'
+    }
+};
+
+const modalOverlay = document.getElementById('serviceModal');
+const modalTitle = document.getElementById('serviceModalTitle');
+const modalSummary = document.getElementById('serviceModalSummary');
+const modalPoints = document.getElementById('serviceModalPoints');
+const modalTimeline = document.getElementById('serviceModalTimeline');
+const modalClose = document.getElementById('serviceModalClose');
+const modalBackdrop = document.getElementById('serviceModalBackdrop');
+
+function openServiceModal(key) {
+    const data = serviceDetails[key];
+    if (!data || !modalOverlay) return;
+
+    modalTitle.textContent = data.title;
+    modalSummary.textContent = data.summary;
+    modalPoints.innerHTML = data.points.map(point => `<li>${point}</li>`).join('');
+    modalTimeline.textContent = data.timeline;
+
+    modalOverlay.classList.add('active');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    modalClose.focus();
+}
+
+function closeServiceModal() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.remove('active');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+}
+
+document.querySelectorAll('.service-detail-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-service');
+        openServiceModal(key);
+    });
+});
+
+modalClose?.addEventListener('click', closeServiceModal);
+modalBackdrop?.addEventListener('click', closeServiceModal);
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeServiceModal();
+    }
+});
+
 // Founder gallery slider
 const founderSlides = [
     {
@@ -178,3 +296,8 @@ founderPrev?.addEventListener('click', () => {
     founderIndex = (founderIndex - 1 + founderSlides.length) % founderSlides.length;
     updateFounderSlide();
 });
+
+
+
+
+
