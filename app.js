@@ -285,6 +285,22 @@ const founderSlides = [
     {
         src: 'assets/image4.jpg',
         caption: 'Coordinating operations across all business sectors.'
+    },
+    {
+        src: 'assets/opoku.jpeg',
+        caption: 'Emmanuel Agyemang Opoku - Leading with vision and integrity.'
+    },
+    {
+        src: 'assets/opoku1.jpeg',
+        caption: 'Expanding our reach across the region.'
+    },
+    {
+        src: 'assets/opoku2.jpeg',
+        caption: 'Connecting with clients and partners.'
+    },
+    {
+        src: 'assets/oopo.jpeg',
+        caption: 'Driving growth across all business sectors.'
     }
 ];
 
