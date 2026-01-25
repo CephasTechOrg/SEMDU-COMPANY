@@ -91,7 +91,7 @@ const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thank you for your message! Our travel expert will contact you within 24 hours.');
+    alert('Thank you for your message! Our team at SEMDU Group Ltd will contact you within 24 hours.');
     contactForm.reset();
 });
 
@@ -136,6 +136,26 @@ window.addEventListener('scroll', () => {
 
 // Service detail modal
 const serviceDetails = {
+    land: {
+        title: 'Land Acquisition',
+        summary: 'Strategic land identification, verification, and acquisition support for investors and developers.',
+        points: [
+            'Thorough land search and verification',
+            'Documentation and title deed processing',
+            'Legal compliance and due diligence support'
+        ],
+        timeline: 'Land identification: 1-4 weeks depending on location'
+    },
+    media: {
+        title: 'Media Services',
+        summary: 'Creative content production, branding, and digital media solutions for businesses and individuals.',
+        points: [
+            'Professional photography and videography',
+            'Brand identity and graphic design',
+            'Social media management and content creation'
+        ],
+        timeline: 'Project scoping: 2-5 days'
+    },
     flight: {
         title: 'Flight Ticket Booking',
         summary: 'Flexible itineraries, best-rate monitoring, and proactive rebooking support for smooth travel.',
@@ -198,7 +218,7 @@ const serviceDetails = {
     },
     estate: {
         title: 'Real Estate Solutions',
-        summary: 'Tenant-ready spaces, investor research, and due diligence support with Semdu\'s local expertise.',
+        summary: 'Tenant-ready spaces, investor research, and due diligence support with SEMDU Group Ltd\'s local expertise.',
         points: [
             'Site selection and market intelligence',
             'Documentation, permits, and compliance checks',
@@ -256,15 +276,15 @@ window.addEventListener('keydown', (e) => {
 const founderSlides = [
     {
         src: 'assets/image1.jpg',
-        caption: 'On-site with the Semdu Global team.'
+        caption: 'On-site with the SEMDU Group Ltd team.'
     },
     {
         src: 'assets/image2.jpg',
-        caption: 'Traveling to support clients overseas.'
+        caption: 'Building partnerships and expanding networks.'
     },
     {
         src: 'assets/image4.jpg',
-        caption: 'At the workspace, coordinating Semdu Express deliveries.'
+        caption: 'Coordinating operations across all business sectors.'
     }
 ];
 
