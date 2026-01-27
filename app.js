@@ -138,11 +138,13 @@ window.addEventListener('scroll', () => {
 const serviceDetails = {
     land: {
         title: 'Land Acquisition',
-        summary: 'Strategic land identification, verification, and acquisition support for investors and developers.',
+        summary: 'SEMDU provides professional land acquisition services focused on sourcing, verifying, and securing genuine lands for individuals, developers, and investors. We identify strategically located lands, conduct thorough due diligence, verify ownership and documentation, and ensure all properties are litigation-free before acquisition.',
         points: [
-            'Thorough land search and verification',
+            'Strategic land identification and sourcing',
+            'Thorough due diligence and ownership verification',
             'Documentation and title deed processing',
-            'Legal compliance and due diligence support'
+            'Litigation-free property guarantee',
+            'Support for residential, commercial, industrial & agricultural projects'
         ],
         timeline: 'Land identification: 1-4 weeks depending on location'
     },
@@ -217,12 +219,14 @@ const serviceDetails = {
         timeline: 'Seasonal planning with weekly supply updates'
     },
     estate: {
-        title: 'Real Estate Solutions',
-        summary: 'Tenant-ready spaces, investor research, and due diligence support with SEMDU Group Ltd\'s local expertise.',
+        title: 'SEMDU Estates',
+        summary: 'SEMDU Real Estate delivers comprehensive property development, sales, and investment solutions. We develop and market residential homes, apartments, estates, and commercial properties designed to meet modern standards and long-term investment goals.',
         points: [
-            'Site selection and market intelligence',
-            'Documentation, permits, and compliance checks',
-            'Maintenance and tenant experience support'
+            'Residential homes, apartments & estate development',
+            'Commercial property development and marketing',
+            'Strategic real estate advisory services',
+            'Property buying, selling & investment support',
+            'Quality delivery with sustainable value'
         ],
         timeline: 'Site shortlist: 3-10 days depending on scope'
     }
